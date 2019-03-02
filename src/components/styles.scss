@@ -1,0 +1,64 @@
+$color-1 :#bd5d38;
+$color-2: #343a40;
+$color-3: #868e96;
+
+@import 'bootstrap/scss/bootstrap.scss';
+
+.app {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+
+    .sidemenu {
+        width: 20%;
+        flex-shrink: 0;
+        background: $color-1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column wrap;
+    }
+
+    .main-content {
+        flex-grow: 1;
+    }
+}
+
+/* sidemenu contents */
+.profile-img {
+    img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: $color-1 + #333;
+        padding: 10px;
+        cursor: pointer;
+    }
+}
+
+.sections-list {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+
+    li {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    a {
+        color: rgba(255, 255, 255, .5);
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: .5s all;
+
+        &:hover {
+            color: white;
+        }
+    }
+}
