@@ -1,29 +1,54 @@
-$color-1 :#bd5d38;
+$color-1 :#007bff;
 $color-2: #343a40;
 $color-3: #868e96;
 
-@import 'bootstrap/scss/bootstrap.scss';
+@mixin prepareSpace($colExist) {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+
+    @if ($colExist) {
+        padding: 70px 0 70px 30px;
+    }
+
+    @else {
+        padding: 70px 30px;
+    }
+
+    border-bottom: 1px solid $color-2;
+}
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+html {
+    font-size: 12px;
+
+    @media screen and (min-width: 572px) {
+        font-size: 15px;
+    }
+}
 
 .app {
-    display: flex;
-    position: absolute;
-    width: 100%;
-    min-height: 100%;
-    top: 0;
-    left: 0;
-
     .sidemenu {
         width: 20%;
-        flex-shrink: 0;
         background: $color-1;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-flow: column wrap;
+        height: 100vh;
+        position: fixed;
     }
 
     .main-content {
-        flex-grow: 1;
+        position: relative;
+        margin-left: 0;
+
+        @media screen and (min-width: 992px) {
+            margin-left: 20%;
+        }
     }
 }
 
@@ -40,25 +65,220 @@ $color-3: #868e96;
 }
 
 .sections-list {
-    margin-top: 20px;
-    list-style: none;
-    padding: 0;
+    margin-top: 30px;
+    text-align: center;
 
-    li {
-        margin-bottom: 10px;
-        text-align: center;
-    }
-
-    a {
-        color: rgba(255, 255, 255, .5);
-        color: rgba(255, 255, 255, 0.5);
-        font-size: 1.5rem;
+    .list-group-item {
+        font-size: 1.3rem;
         text-transform: uppercase;
-        text-decoration: none;
+        background: none;
+        border: 0;
+        color: rgba(255, 255, 255, .5);
+        padding: 0.30rem 0;
         transition: .5s all;
 
         &:hover {
             color: white;
+        }
+
+        &.active {
+            color: white;
+            background: none;
+            border: 0;
+        }
+    }
+}
+
+/* top navbar */
+.top-navbar {
+    background: $color-1;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    padding: 15px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s all;
+
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .navbar-brand {
+        text-transform: capitalize;
+        font-size: 1.7rem;
+    }
+
+    .navbar-toggler {
+        outline: none !important;
+    }
+
+    .nav-link {
+        font-size: 1.4rem;
+
+    }
+}
+
+/* about section */
+.about {
+    @include prepareSpace(false)
+}
+
+.about-first {
+    h1 {
+        font-size: 4rem;
+        color: $color-2;
+        font-weight: bolder;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+
+        span {
+            color: $color-1;
+        }
+    }
+
+    .address,
+    .phone {
+        font-size: 1.2rem;
+        color: $color-3;
+    }
+
+    .email {
+        color: $color-1;
+        font-size: 1.2rem;
+    }
+}
+
+.about-second {
+    margin: 80px 0;
+
+    p {
+        color: $color-3;
+        font-size: 1.2rem;
+        font-weight: 400
+    }
+}
+
+.about-third {
+    a {
+        margin-right: 20px;
+        padding: 15px;
+        border-radius: 50%;
+        color: white;
+        background: $color-2;
+        font-size: 1.5rem;
+        transition: .5s all;
+
+        &:hover {
+            background: $color-1;
+        }
+    }
+}
+
+/* education section */
+.education {
+    @include prepareSpace(false);
+
+    h1 {
+        font-size: 3rem;
+        text-transform: uppercase;
+        margin-bottom: 70px;
+        font-weight: 700;
+        color: $color-2;
+    }
+}
+
+.education-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-flow: row wrap;
+
+    .univercity {
+        margin-bottom: 20px;
+
+        h2 {
+            text-transform: capitalize;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            color: $color-3;
+            font-weight: 500;
+        }
+
+        h3 {
+            text-transform: capitalize;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: $color-3;
+        }
+    }
+
+    .grad-date {
+        font-size: 1.3rem;
+        color: $color-1;
+        text-transform: uppercase;
+    }
+}
+
+/* skills section */
+.skills {
+    @include prepareSpace(true);
+
+    h1 {
+        font-size: 3rem;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+        font-weight: 700;
+        color: $color-2;
+    }
+
+    label {
+        font-size: 1.2rem;
+    }
+
+    .col-md-6 {
+        margin-bottom: 10px;
+    }
+
+    .progress {
+        height: 1.5rem;
+        font-size: .9rem;
+    }
+}
+
+/* interests section */
+.interests {
+    @include prepareSpace(true);
+
+    h1 {
+        font-size: 3rem;
+        text-transform: uppercase;
+        margin-bottom: 70px;
+        font-weight: 700;
+        color: $color-2;
+    }
+
+    .col-6 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    button {
+        background: transparent;
+        border: 0;
+        color: $color-3;
+        font-size: 5rem;
+        transition: .5s all;
+        outline: none;
+
+        &:hover {
+            color: $color-1
         }
     }
 }

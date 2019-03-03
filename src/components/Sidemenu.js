@@ -1,20 +1,23 @@
 import React from 'react'
 import './styles.scss'
 import profile from '../assets/profile.jpg'
+import {
+    ListGroup, ListGroupItem
+} from 'reactstrap'
 
 const Sidemenu = () => {
     return (
-        <aside className="sidemenu">
+        <aside className="sidemenu d-none d-lg-flex">
             <section className="profile-img">
                 <img src={profile} alt="profile" />
             </section>
-            <ul className="sections-list">
-                <li><a href="#about">about</a></li>
-                <li><a href="#education">education</a></li>
-                <li><a href="#skills">skills</a></li>
-                <li><a href="#interests">interests</a></li>
-            </ul>
-        </aside>
+            <ListGroup className="sections-list">
+                <ListGroupItem tag='a' href="#about" active action>about</ListGroupItem>
+                <ListGroupItem tag='a' href="#education" action>education</ListGroupItem>
+                <ListGroupItem tag='a' href="#skills" action>skills</ListGroupItem>
+                <ListGroupItem tag='a' href="#interests" action>interests</ListGroupItem>
+            </ListGroup>
+        </aside >
     )
 }
 

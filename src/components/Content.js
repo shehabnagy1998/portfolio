@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
+import TopNavbar from './TopNavbar';
+import About from './About';
+import Education from './Education';
+import Skills from './Skills';
+import Interests from './Interests';
 
 export default class Content extends Component {
     render() {
         return (
             <article className="main-content">
-
+                <TopNavbar />
+                <About />
+                <Education />
+                <Skills />
+                <Interests />
             </article>
         )
     }
