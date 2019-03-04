@@ -11,7 +11,7 @@ const Sidemenu = () => {
             <section className="profile-img">
                 <img src={profile} alt="profile" />
             </section>
-            <ListGroup className="sections-list">
+            <ListGroup className="sections-list" id='menu'>
                 <ListGroupItem tag='a' href="#about" active action>about</ListGroupItem>
                 <ListGroupItem tag='a' href="#education" action>education</ListGroupItem>
                 <ListGroupItem tag='a' href="#skills" action>skills</ListGroupItem>

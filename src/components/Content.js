@@ -4,11 +4,13 @@ import About from './About';
 import Education from './Education';
 import Skills from './Skills';
 import Interests from './Interests';
+// import * as $ from 'jquery'
+// import 'bootstrap';
 
 export default class Content extends Component {
     render() {
         return (
-            <article className="main-content">
+            <article className="main-content" >
                 <TopNavbar />
                 <About />
                 <Education />

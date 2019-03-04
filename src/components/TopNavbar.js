@@ -17,22 +17,22 @@ export default class TopNavbar extends Component {
 
     render() {
         return (
-            <Navbar dark className="d-lg-none top-navbar">
+            <Navbar dark className="d-lg-none top-navbar" id='menu'>
                 <NavbarBrand href="/">shehab nagy</NavbarBrand>
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav navbar>
                         <NavItem>
-                            <NavLink href='/about'>about</NavLink>
+                            <NavLink href='#about'>about</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href='/education'>education</NavLink>
+                            <NavLink href='#education'>education</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href='/skills'>skills</NavLink>
+                            <NavLink href='#skills'>skills</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href='/interests'>interests</NavLink>
+                            <NavLink href='#interests'>interests</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>
