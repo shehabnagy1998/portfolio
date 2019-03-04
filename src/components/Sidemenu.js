@@ -9,7 +9,7 @@ const Sidemenu = () => {
     return (
         <aside className="sidemenu d-none d-lg-flex">
             <section className="profile-img">
-                <img src={profile} alt="profile" />
+                <img src={profile} alt="profile" className='wow slideInLeft' />
             </section>
             <ListGroup className="sections-list" id='menu'>
                 <ListGroupItem tag='a' href="#about" active action>about</ListGroupItem>

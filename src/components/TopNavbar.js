@@ -17,7 +17,7 @@ export default class TopNavbar extends Component {
 
     render() {
         return (
-            <Navbar dark className="d-lg-none top-navbar" id='menu'>
+            <Navbar dark className="d-lg-none top-navbar" id='menu' fixed='top'>
                 <NavbarBrand href="/">shehab nagy</NavbarBrand>
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>

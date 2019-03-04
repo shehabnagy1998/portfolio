@@ -21,12 +21,12 @@ export default class About extends Component {
         return (
             <article className="about" id="about">
                 <section className="about-first">
-                    <h1>shehab <span>nagy</span></h1>
-                    <span className="address">cairo, egypt - </span>
-                    <span className="phone">+201064264908 - </span>
+                    <h1 className='wow slideInRight'>shehab <span>nagy</span></h1>
+                    <span className="address">cairo, egypt &middot; </span>
+                    <span className="phone">+201064264908 &middot; </span>
                     <a href="mailto:shehab.nagy1998@gmail.com" className="email">shehab.nagy1998@gmail.com</a>
                 </section>
-                <section className="about-second">
+                <section className="about-second wow lightSpeedIn">
                     <p>I am experienced in leveraging agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
                 </section>
                 <section className="about-third">
